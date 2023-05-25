@@ -117,7 +117,74 @@ float three_way_min(float a, float b, float c)
 
 void rgb_to_hsv(image im)
 {
-    // TODO Fill this in
+    //Cool , this is interesting 
+    
+    for(int i=0;i<((im.w)*(im.h));i++)
+    {
+        // First we need to extract the rgb components 
+        float red= im.data[i];
+        float green= im.data[i+((im.w)*(im.h))];
+        float blue= im.data[i+2*((im.w)*(im.h));
+                            
+        // Finding the value should be easy 
+        float Value=three_way_max(red,green,blue);
+        
+        //Saturation
+        float min=three_way_min(red,green,blue);
+        float C=Value-min;
+        float Saturation;
+        if((red==0.0f && green==0.0f )&& blue==0.0f)
+        {
+            Saturation=0.0f;
+        }                   
+        else
+        {
+            Saturation= C/Value;
+        }
+                                                
+        //HUE
+        float Hue,Hue_dash;
+        if (C == 0)
+        {
+            Hue = 0;
+        }
+        else if (Value == red)
+        {
+          Hue_dash = (green - blue) / C;
+        }
+        else if (Value == green)
+        {
+           Hue_dash = ((blue - red) / C) + 2;
+        }       
+        else if (Value == blue)
+        {
+          Hue_dash = ((red - green) / C) + 4;
+        }
+        else
+        {
+           ;
+        } 
+        
+        //We got Hue_Dash
+        if(C!=0)  
+        {
+        if(Hue_dash<0)
+        {
+            Hue= (Hue_dash/6) + 1 ;
+        }
+        else
+        {
+            Hue= (Hue_dash/6) ;
+        }
+        }                                                            
+        
+        //setting the values
+        im.data[i]=Hue;
+        im.data[i+((im.w)*(im.h))]=Saturation;
+        im.data[i+2*((im.w)*(im.h))=Value;                    
+                            
+                            
+    }
 }
 
 void hsv_to_rgb(image im)
