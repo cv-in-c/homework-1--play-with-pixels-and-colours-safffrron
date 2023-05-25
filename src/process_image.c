@@ -206,26 +206,42 @@ void hsv_to_rgb(image im)
     if(h>=0 && h<60)
     {
         r=c;
-        g=
+        g=x; 
+        b=0;
     }
     else if( h>=60 && h< 120)
     {
+        r=x;
+        g=c; 
+        b=0;
 
     }
     else if( h>=120 && h< 180)
     {
+        r=0;
+        g=; 
+        b=x;
         
     }
     else if( h>=180 && h< 240)
     {
+        r=c;
+        g=x; 
+        b=0;
         
     }
     else if( h>=240 && h< 300)
     {
+        r=c;
+        g=x; 
+        b=0;
         
     }
     else 
     {
+        r=c;
+        g=x; 
+        b=0;
         
     }
 }
