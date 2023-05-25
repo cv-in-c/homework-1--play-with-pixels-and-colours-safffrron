@@ -82,7 +82,25 @@ void shift_image(image im, int c, float v)
 
 void clamp_image(image im)
 {
-    // TODO Fill this in
+    //all we have to do is restrict the pixel data values between 0 and 1 , roger that 
+    
+    for(int i=0;i<((im.c)*(im.w)*(im.h));i++)
+    {
+       if(im.data[i] <= 0.0f)
+       {
+           im.data[i]=0.0f;
+       }
+       else if(im.data[i] >= 1.0f)
+       {
+           im.data[i]=1.0f;
+       } 
+       else
+       {
+           ;
+       }    
+        
+    }
+    
 }
 
 
