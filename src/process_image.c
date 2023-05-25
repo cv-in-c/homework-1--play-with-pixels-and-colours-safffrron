@@ -198,9 +198,9 @@ void hsv_to_rgb(image im)
     h=h*360;
 
     //Conversion parameters
-    float C= v *s ;
-    float X= C * (1- abs(((h/60)/2) - 1 ));
-    float m= v- C;
+    float c= v *s ;
+    float x= c * (1- abs(((h/60)/2) - 1 ));
+    float m= v- c;
     float r, g, b;
 
     if(h>=0 && h<60)
