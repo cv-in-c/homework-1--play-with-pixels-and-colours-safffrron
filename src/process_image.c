@@ -190,5 +190,42 @@ void rgb_to_hsv(image im)
 void hsv_to_rgb(image im)
 {
     // First we need to get the HSV values 
+    float h= im.data[i];
+    float s= im.data[i+((im.w)*(im.h))];
+    float v= im.data[i+2*((im.w)*(im.h));
     
+    // As H is between 0 and 1 , We need to convert it to 0 and 360
+    h=h*360;
+
+    //Conversion parameters
+    float C= v *s ;
+    float X= C * (1- abs(((h/60)/2) - 1 ));
+    float m= v- C;
+    float r, g, b;
+
+    if(h>=0 && h<60)
+    {
+        r=c;
+        g=
+    }
+    else if( h>=60 && h< 120)
+    {
+
+    }
+    else if( h>=120 && h< 180)
+    {
+        
+    }
+    else if( h>=180 && h< 240)
+    {
+        
+    }
+    else if( h>=240 && h< 300)
+    {
+        
+    }
+    else 
+    {
+        
+    }
 }
