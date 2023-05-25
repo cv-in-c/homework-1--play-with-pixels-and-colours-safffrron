@@ -66,7 +66,18 @@ image rgb_to_grayscale(image im)
 
 void shift_image(image im, int c, float v)
 {
-    // TODO Fill this in
+    // Okay add v to every pixel in channel c , got it 
+    // we can check the validity 
+    if(c<0 || c>=im.c)
+    {
+        return;
+    }
+    
+    //Assuming CHW arrangement
+    for(int i=0;i<((im.w)*(im.h));i++)
+    {
+        im.data[i+(c*((im.w)*(im.h))]+=v;
+    }
 }
 
 void clamp_image(image im)
