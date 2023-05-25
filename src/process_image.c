@@ -54,7 +54,13 @@ image rgb_to_grayscale(image im)
 {
     assert(im.c == 3);
     image gray = make_image(im.w, im.h, 1);
-    // TODO Fill this in
+    
+     for(int i=0;i<((im.w)*(im.h));i++)
+    {
+       float luma_value= (0.299*im.data[i]) +  (0.587*im.data[i+((im.w)*(im.h))]) +. (0.114*im.data[i+2*((im.w)*(im.h))]);
+       gray.data[i]=luma_value;       
+    }
+    
     return gray;
 }
 
