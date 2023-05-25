@@ -219,29 +219,40 @@ void hsv_to_rgb(image im)
     else if( h>=120 && h< 180)
     {
         r=0;
-        g=; 
+        g=c; 
         b=x;
         
     }
     else if( h>=180 && h< 240)
     {
-        r=c;
+        r=0;
         g=x; 
-        b=0;
+        b=c;
         
     }
     else if( h>=240 && h< 300)
     {
-        r=c;
-        g=x; 
-        b=0;
+        r=x;
+        g=0; 
+        b=c;
         
     }
     else 
     {
         r=c;
-        g=x; 
-        b=0;
+        g=0; 
+        b=x;
         
     }
+    r=r+m;
+    g=g+m;
+    b=b+m;
+
+
+    //setting the values
+    im.data[i]=r;
+    im.data[i+((im.w)*(im.h))]=g;
+    im.data[i+2*((im.w)*(im.h))=b;
+
+
 }
