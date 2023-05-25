@@ -6,8 +6,12 @@
 
 float get_pixel(image im, int x, int y, int c)
 {
-    // TODO Fill this in
-    return 0;
+    //Using the CHW format
+    //Assuming im.h gives image height , im.w gives image width and im.c gives total channels 
+    //In this fn we only need to return the value of the pixel at column x , row y and channel c 
+    //we know that im.data stores the value 
+    float *value= im.data + (c * im.w * im.h)+(y * im.w)+ x;
+    return *value;
 }
 
 void set_pixel(image im, int x, int y, int c, float v)
