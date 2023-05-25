@@ -39,7 +39,14 @@ void set_pixel(image im, int x, int y, int c, float v)
 image copy_image(image im)
 {
     image copy = make_image(im.w, im.h, im.c);
-    // TODO Fill this in
+    //okay, so we just need to fill the data attribute 
+    //we can loop by array 
+    
+    for(int i=0;i<((im.c)*(im.w)*(im.h));i++)
+    {
+       copy.data[i]=im.data[i];       
+    }
+        
     return copy;
 }
 
