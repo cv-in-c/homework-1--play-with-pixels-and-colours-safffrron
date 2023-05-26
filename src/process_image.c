@@ -199,7 +199,7 @@ void hsv_to_rgb(image im)
 
     //Conversion parameters
     float c= v *s ;
-    float x= c * (1- abs(((h/60)/2) - 1 ));
+    float x= c * (1- abs(((h/60)%2) - 1 ));
     float m= v- c;
     float r, g, b;
 
